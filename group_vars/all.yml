@@ -1,0 +1,7 @@
+---
+# Variables shared across all hosts
+db_name: appdb
+db_user: appuser
+db_pass: "{{ vault_db_pass }}"  # Store in ansible-vault!
+nginx_port: 80
+app_domain: myapp.example.com

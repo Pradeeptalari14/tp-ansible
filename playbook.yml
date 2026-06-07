@@ -1,0 +1,16 @@
+---
+# SRE Enterprise Playbook
+- name: Base hardening — all hosts
+  hosts: all
+  become: yes
+  roles: [common]
+
+- name: Web server deployment
+  hosts: webservers
+  become: yes
+  roles: [webserver, monitoring_agent]
+
+- name: Database configuration
+  hosts: dbservers
+  become: yes
+  roles: [postgres, backup_agent]
